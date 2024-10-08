@@ -31,3 +31,13 @@ The system is initially built for internal use by the [**Robert Ellis**](https:/
 
 --- 
 
+## Tech Stack
+
+| Technology    | Description                              |
+|---------------|------------------------------------------|
+| **Frontend**  | Next..js                                 |
+| **Backend**   | Node.js                                  |
+| **Database**  | MongoDB                                  |
+| **DevOps**    | Docker                                   |
+| **Testing**   | Jest                                     |
+| **Hosting**   | AWS (EC2, S3, Lambda)                    |
