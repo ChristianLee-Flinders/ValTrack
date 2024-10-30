@@ -12,6 +12,7 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  Terminal,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -25,10 +26,12 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { locations, sidebarLinks } from "@/constants"
+import { adminLinks, footerLinks, locations, sidebarLinks } from "@/constants"
 import { Input } from "./ui/input"
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert"
 
 const navMain = sidebarLinks
+const footerNav = footerLinks
 const Locations = locations
 const user = {
     name: "Christian Lee-Flinders",
@@ -37,13 +40,15 @@ const user = {
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar className="border-none" collapsible="icon" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={Locations} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={navMain} />
+        <NavMain items={navMain} title="Managment" />
+        <NavMain items={adminLinks} title="Admin" />
       </SidebarContent>
+      <NavMain items={footerNav} title=""/>
       <SidebarFooter>
         <NavUser user={user} />
       </SidebarFooter>

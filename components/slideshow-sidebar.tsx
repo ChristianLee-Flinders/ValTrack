@@ -1,9 +1,28 @@
-import React from 'react'
+"use client"
 
-const SlideshowSidebar  = () => {
+import * as React from "react"
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+} from "@/components/ui/sidebar"
+
+export function SlideshowSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <div>SlideShowSideBar</div>
+    <Sidebar collapsible="icon" {...props}>
+      <SidebarHeader>
+
+      </SidebarHeader>
+      <SidebarContent>
+
+      </SidebarContent>
+      <SidebarFooter>
+
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
   )
 }
-
-export default SlideshowSidebar
