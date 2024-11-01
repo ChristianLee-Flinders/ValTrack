@@ -1,5 +1,5 @@
 import { url } from "inspector"
-import { AudioWaveform, Bell, BookOpen, Bot, ChartArea, ChartCandlestick, CircleHelp, Command, ExternalLink, FileChartPie, GalleryVerticalEnd, Home, House, HouseIcon, Icon, LayoutDashboard, Mail, PanelsTopLeft, Route, Settings, Settings2, Sliders, SquareTerminal, User, User2, Users } from "lucide-react"
+import { AudioWaveform, Bell, BookOpen, Bot, Car, ChartArea, ChartCandlestick, CircleHelp, Command, ExternalLink, FileChartPie, GalleryVerticalEnd, Home, House, HouseIcon, HousePlug, Icon, Key, LayoutDashboard, Mail, PanelsTopLeft, Route, Settings, Settings2, Sliders, SquareTerminal, User, User2, Users } from "lucide-react"
 import { title } from "process"
 
 export const loggedIn : User = {
@@ -228,12 +228,12 @@ export const teamMembers = [
   },
 ]
 
-const testSlide : SlideProps = {
+export const testSlide1 : SlideProps  = {
   id: "slide-1", // Unique identifier for the slide
-  layout: "layout-1", // Layout type (if applicable)
+  layout: "1", // Layout type (if applicable)
   title: "Welcome to Our Presentation", // Title of the slide
   content: "This slide introduces our topic and objectives.", // Main text content
-  images: ["https://example.com/image1.jpg", "https://example.com/image2.jpg"], // Array of image URLs
+  images: ["https://via.placeholder.com/800x400.png?text=Sample+Image+2", "https://via.placeholder.com/800x400.png?text=Sample+Image+2"], // Array of image URLs
   bulletPoints: ["Introduction to the topic", "Key objectives", "Overview of the agenda"], // Array of bullet points
   videoUrl: "https://www.youtube.com/embed/video_id", // URL of a video (optional)
   footer: "Presented by: Team A", // Additional notes or references
@@ -245,6 +245,50 @@ const testSlide : SlideProps = {
   },
   timestamp: new Date().toISOString(), // Timestamp for when the slide was created/updated
   author: "John Doe", // Name of the author or creator of the slide
-};
+}
+
+export const testSlide2 : SlideProps  = {
+  id: "slide-2", // Unique identifier for the slide
+  layout: "3", // Layout type (if applicable)
+  title: "Why choose us?", // Title of the slide
+  content: "This slide introduces our topic and objectives.", // Main text content
+  images: ["https://via.placeholder.com/800x400.png?text=Sample+Image+1", "https://via.placeholder.com/800x400.png?text=Sample+Image+2"], // Array of image URLs
+  bulletPoints: [["Main Point","Introduction to the topic"], ["Main Point","Introduction to the topic"],["Main Point","Introduction to the topic"]], // Array of bullet points
+  bulletPointIcons: [House, Car, Key],
+  accentColor: "#30C4EB",
+  videoUrl: "https://www.youtube.com/embed/video_id", // URL of a video (optional)
+  footer: "Presented by: Team A", // Additional notes or references
+  backgroundColor: "#ffffff", // Background color of the slide (optional)
+  textColor: "#000000", // Color of the text (optional)
+  animation: { // Animation settings for the slide
+    enter: "fade-in", // Animation class or type for entering
+    exit: "fade-out", // Animation class or type for exiting
+  },
+  timestamp: new Date().toISOString(), // Timestamp for when the slide was created/updated
+  author: "John Doe", // Name of the author or creator of the slide
+}
+
+export const testSlide3 : SlideProps  = {
+  id: "slide-3", // Unique identifier for the slide
+  layout: "2", // Layout type (if applicable)
+  title: "Slide number 3", // Title of the slide
+  content: "This slide introduces our topic and objectives.", // Main text content
+  images: ["https://example.com/image1.jpg", "https://example.com/image2.jpg"], // Array of image URLs
+  bulletPoints: [["Introduction to the topic","Overview of the agenda"],["Introduction to the topic","Overview of the agenda"]], // Array of bullet points
+  videoUrl: "https://www.youtube.com/embed/video_id", // URL of a video (optional)
+  footer: "Presented by: Team A", // Additional notes or references
+  backgroundColor: "#e0f7fa", // Background color of the slide (optional)
+  textColor: "#000000", // Color of the text (optional)
+  animation: { // Animation settings for the slide
+    enter: "fade-in", // Animation class or type for entering
+    exit: "fade-out", // Animation class or type for exiting
+  },
+  timestamp: new Date().toISOString(), // Timestamp for when the slide was created/updated
+  author: "John Doe", // Name of the author or creator of the slide
+}
+
+export const testSlideShow : SlideShowProps = {
+  slides: [testSlide1, testSlide2, testSlide3],
+}
 
 

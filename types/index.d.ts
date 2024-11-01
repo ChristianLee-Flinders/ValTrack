@@ -28,7 +28,9 @@ declare interface HeaderBoxProps {
     title: string;
     content: string;
     images: string[];
-    bulletPoints: string[];
+    bulletPoints?: string[][];
+    bulletPointIcons?: any[];
+    accentColor?: string;
     videoUrl: string;
     footer: string;
     backgroundColor: string;
@@ -41,4 +43,8 @@ declare interface HeaderBoxProps {
   declare type slideAnimationProps = {
     enter: string;
     exit: string;
+  }
+
+  declare type SlideShowProps = {
+    slides : SlideProps[],
   }

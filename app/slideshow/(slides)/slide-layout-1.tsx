@@ -1,82 +1,45 @@
-// @/components/slides/SlideLayout1.tsx
+// app/slideshow/(slides)/slide-layout-1.tsx
 
 import React from 'react';
 
-interface SlideContent {
-  title: string;
-  content: string;
-  images: string[];
-  bulletPoints: string[];
-  videoUrl?: string | null;
-  footer?: string;
-  backgroundColor?: string;
-  textColor?: string;
+interface SlideLayout1Props {
+  slide: SlideProps; // Define the type for the slide prop
 }
 
-interface SlideProps {
-  slide: SlideContent; // Accepts a single slide content
-}
-
-const SlideLayout1: React.FC<SlideProps> = ({ slide }) => {
+const SlideLayout1: React.FC<SlideLayout1Props> = ({ slide }) => {
   return (
-    <div 
-      className={`flex flex-col justify-between w-full h-full p-6 rounded-lg shadow-md`}
-      style={{ backgroundColor: slide.backgroundColor || '#ffffff' }} // Default background color
+    <div
+      className="flex flex-col items-center justify-center w-full h-full p-4"
+      style={{ backgroundColor: slide.backgroundColor, color: slide.textColor }}
     >
-      <h2 
-        className="text-3xl font-bold" 
-        style={{ color: slide.textColor || '#000000' }} // Default text color
-      >
-        {slide.title}
-      </h2>
-      <p className="mt-2 text-lg" style={{ color: slide.textColor || '#000000' }}>
-        {slide.content}
-      </p>
+      <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center">{slide.title}</h1>
+      <p className="text-base md:text-lg mb-4 text-center">{slide.content}</p>
 
       {/* Render Images */}
-      <div className="flex flex-col items-center mt-4">
-        {slide.images.map((image, index) => (
-          <img 
-            key={index} 
-            src={image} 
-            alt={`Slide image ${index + 1}`} 
-            className="w-full h-auto max-h-60 object-cover rounded-md" 
-          />
-        ))}
-      </div>
+      {slide.images.length > 0 && (
+        <div className="flex flex-wrap justify-center mb-4">
+          {slide.images.map((image, index) => (
+            <img 
+              key={index} 
+              src={image} 
+              alt={`Slide Image ${index + 1}`} 
+              className="w-full md:w-1/2 lg:w-1/3 p-2 rounded-lg shadow-lg transition-transform transform hover:scale-105" 
+            />
+          ))}
+        </div>
+      )}
 
       {/* Render Bullet Points */}
       {slide.bulletPoints.length > 0 && (
-        <ul className="list-disc list-inside mt-4">
+        <ul className="list-disc mb-4 text-center">
           {slide.bulletPoints.map((point, index) => (
-            <li key={index} className="text-lg" style={{ color: slide.textColor || '#000000' }}>
-              {point}
-            </li>
+            <li key={index} className="ml-4">{point}</li>
           ))}
         </ul>
       )}
 
-      {/* Render Video if available */}
-      {slide.videoUrl && (
-        <div className="mt-4">
-          <iframe 
-            width="100%" 
-            height="315" 
-            src={slide.videoUrl} 
-            title="Video slide"
-            className="rounded-lg"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        </div>
-      )}
-
-      {/* Render Footer if available */}
-      {slide.footer && (
-        <p className="mt-4 text-gray-500 text-sm" style={{ color: slide.textColor || '#000000' }}>
-          {slide.footer}
-        </p>
-      )}
+      {/* Render Footer */}
+      <footer className="mt-6 text-sm italic">{slide.footer}</footer>
     </div>
   );
 };
