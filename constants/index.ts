@@ -73,11 +73,11 @@ export const adminLinks = [
     items : [
       {
         title: "Past Reports",
-        url: "admin/reports",
+        url: "/admin/reports",
       },
       {
         title: "Generate Report",
-        url: "admin/new-report",
+        url: "/admin/new-report",
       }
     ]
   },
@@ -107,7 +107,7 @@ export const adminLinks = [
   },
   {
     title: "Slide Shows",
-    url: "admin/slideshow",
+    url: "/admin/slideshow",
     icon: PanelsTopLeft,
   }
 ]

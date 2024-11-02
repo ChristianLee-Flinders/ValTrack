@@ -20,6 +20,7 @@ declare interface HeaderBoxProps {
     dateOfBirth?: string;
     status: string;
     team: string;
+    role: string;
   };
 
   declare type SlideProps = {

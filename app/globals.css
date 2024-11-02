@@ -282,7 +282,7 @@ body {
   }
 
   .form-row {
-    @apply flex items-center;
+    @apply flex items-start;
   }
 
   .form-row-item {

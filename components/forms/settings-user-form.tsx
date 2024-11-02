@@ -17,6 +17,7 @@ export function SettingsUserForm() {
       firstName: "",
       lastName: "",
       email: "",
+      role: "",
     },
   })
 
@@ -79,6 +80,29 @@ export function SettingsUserForm() {
                         <FormControl>
                             <Input 
                                 placeholder="christian.lee-flinders@robertellis.co.uk" 
+                                {...field} 
+                            />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
+            </div>
+        </div>
+        <hr />
+        <div className="form-row">
+            <div className="form-row-label">
+                <p>Role</p>
+            </div>
+            <div className="form-row-item">
+            <FormField
+                control={form.control}
+                name="role"
+                render={({ field }) => (
+                    <FormItem className="form-input">
+                        <FormControl>
+                            <Input 
+                                placeholder="Sales Negotiator" 
                                 {...field} 
                             />
                         </FormControl>
