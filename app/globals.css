@@ -282,19 +282,19 @@ body {
   }
 
   .form-row {
-    @apply flex justify-center items-center w-full;
+    @apply flex items-center;
   }
 
   .form-row-item {
-    @apply flex gap-4 justify-center flex-1;
+    @apply flex flex-grow justify-center gap-4 max-w-[50%] mx-auto;
   }
 
-  .form-item {
-    @apply flex flex-col gap-1.5;
+  .form-input{
+    @apply flex-grow w-full;
   }
 
   .form-row-label {
-    @apply text-14 font-medium text-gray-700 flex-none mr-4;
+    @apply text-14 font-semibold text-gray-700;
   }
 
   .form-message {

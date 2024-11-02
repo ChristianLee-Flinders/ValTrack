@@ -27,22 +27,21 @@ export function SettingsUserForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
         <div className="form-row">
             <div className="form-row-label">
-                <p>Name *</p>
+                <p>Name*</p>
             </div>
             <div className="form-row-item">
             <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="form-input">
                         <FormControl>
                             <Input 
                                 placeholder="Christian" 
                                 {...field} 
-                                className="w-64 p-3" // Adjust width and padding
                             />
                         </FormControl>
                         <FormMessage />
@@ -53,19 +52,40 @@ export function SettingsUserForm() {
                 control={form.control}
                 name="lastName"
                 render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="form-input">
                         <FormControl>
                             <Input 
                                 placeholder="Lee-Flinders" 
                                 {...field} 
-                                className="w-64 p-3" // Adjust width and padding
                             />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
                 )}
             />
-
+            </div>
+        </div>
+        <hr />
+        <div className="form-row">
+            <div className="form-row-label">
+                <p>Email*</p>
+            </div>
+            <div className="form-row-item">
+            <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                    <FormItem className="form-input">
+                        <FormControl>
+                            <Input 
+                                placeholder="christian.lee-flinders@robertellis.co.uk" 
+                                {...field} 
+                            />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
             </div>
         </div>
     </form>
