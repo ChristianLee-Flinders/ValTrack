@@ -49,3 +49,17 @@ declare interface HeaderBoxProps {
   declare type SlideShowProps = {
     slides : SlideProps[],
   }
+  
+  declare interface getUserInfoProps {
+    userId: string;
+  }
+
+  declare interface signInProps {
+    email: string;
+    password: string;
+  }
+
+  declare type SignUpParams = {
+    email: string;
+    password: string;
+  };
