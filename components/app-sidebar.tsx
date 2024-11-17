@@ -29,15 +29,13 @@ import {
 import { adminLinks, footerLinks, locations, sidebarLinks } from "@/constants"
 import { Input } from "./ui/input"
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert"
+import { getLoggedInUser } from "@/lib/actions/user.actions"
 
 const navMain = sidebarLinks
 const footerNav = footerLinks
 const Locations = locations
-const user = {
-    name: "Christian Lee-Flinders",
-    email: "christian.lee-flinders@robertellis.co.uk",
-    avatar: "/avatars/shadcn.jpg",
-}
+const user = getLoggedInUser();
+console.log(user);
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar className="border-none" collapsible="icon" {...props}>

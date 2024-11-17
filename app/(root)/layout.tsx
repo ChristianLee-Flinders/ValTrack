@@ -1,4 +1,5 @@
 import { AppSidebar } from "@/components/app-sidebar";
+import HeaderBox from "@/components/header-box";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
