@@ -6,21 +6,17 @@ declare interface HeaderBoxProps {
   };
 
   declare type User = {
-    profilePicture: string | undefined;
     $id: string;
     email: string;
     userId: string;
     firstName: string;
     lastName: string;
     name: string;
-    address1?: string;
-    city?: string;
-    state?: string;
-    postalCode?: string;
-    dateOfBirth?: string;
-    status: string;
-    team: string;
-    role: string;
+    address1: string;
+    city: string;
+    state: string;
+    postalCode: string;
+    dateOfBirth: string;
   };
 
   declare type SlideProps = {
@@ -52,6 +48,10 @@ declare interface HeaderBoxProps {
   
   declare interface getUserInfoProps {
     userId: string;
+  }
+
+  declare interface SiderbarProps {
+    user: User;
   }
 
   declare interface signInProps {

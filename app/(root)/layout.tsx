@@ -15,7 +15,7 @@ export default async function RootLayout({
 
     return (
       <SidebarProvider>
-        <AppSidebar/>
+        <AppSidebar user={loggedIn}/>
         <div className="flex justify-center items-center min-h-screen w-full p-2">
           <div className=" border-2 border-solid w-full h-full bg-white rounded-xl p-6 overflow-y-auto">
             {children}

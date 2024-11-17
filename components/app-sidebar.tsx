@@ -34,23 +34,38 @@ import { getLoggedInUser } from "@/lib/actions/user.actions"
 const navMain = sidebarLinks
 const footerNav = footerLinks
 const Locations = locations
-const user = getLoggedInUser();
-console.log(user);
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+
+export function AppSidebar({ user, ...props }: React.ComponentProps<typeof Sidebar>) {
+
+  const fallbackUser: User = {
+    name: "Guest",
+    email: "guest@example.com",
+    $id: "",
+    userId: "",
+    firstName: "",
+    lastName: "",
+    address1: "",
+    city: "",
+    state: "",
+    postalCode: "",
+    dateOfBirth: ""
+  };
+
   return (
-    <Sidebar className="border-none" collapsible="icon" {...props}>
+    <Sidebar user={user} className="border-none" collapsible="icon" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={Locations} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={navMain} title="Managment" />
+        <NavMain items={navMain} title="Management" />
         <NavMain items={adminLinks} title="Admin" />
       </SidebarContent>
-      <NavMain items={footerNav} title=""/>
+      <NavMain items={footerNav} title="" />
       <SidebarFooter>
-        <NavUser user={user} />
+        <NavUser user={user ?? fallbackUser} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
+
